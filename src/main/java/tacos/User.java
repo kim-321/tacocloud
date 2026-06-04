@@ -1,10 +1,15 @@
 package tacos;
-import jakarta.persistence.*;
+
 import lombok.*;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import lombok.Data;
+import org.springframework.data.annotation.Id; // ✅ MongoDB용 Id 임포트
+import java.util.Collection;
+
+
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -15,7 +20,6 @@ public class User implements UserDetails {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
     private String id;
 
     @Override
